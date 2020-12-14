@@ -6,3 +6,4 @@ lib/scripts - bloodcat/
 start.bat
 .vs/
 TODO.TXT
+.env
