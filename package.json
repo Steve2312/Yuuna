@@ -14,6 +14,7 @@
     "electron": "^10.1.5"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "electron-dl": "^3.0.2",
     "extract-zip": "^2.0.1",
     "howler": "^2.2.1",

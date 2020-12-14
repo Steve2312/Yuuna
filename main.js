@@ -1,6 +1,7 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
-const {download} = require('electron-dl');
-app.commandLine.appendSwitch("disable-http-cache");
+const { app, BrowserWindow} = require('electron');
+
+if (process.env.NODE_ENV == 'production') require('dotenv').config();
+
 function createWindow() {
     const win = new BrowserWindow({
         width: 1280,
@@ -12,7 +13,7 @@ function createWindow() {
         }
     })
 
-    win.loadFile("lib/main.html")
+    win.loadFile("lib/main.html");
     //win.webContents.openDevTools()
 }
 
@@ -20,12 +21,12 @@ app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
 })
 
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow()
+        createWindow();
     }
 })
