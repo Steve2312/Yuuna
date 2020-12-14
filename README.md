@@ -1,0 +1,105 @@
+<h1>Tease (Not definite)</h1>
+A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative).
+
+<h5>Screenshots:</h5>
+
+![ ](https://kuina-natsukawa.s-ul.eu/PAtw0XK0)
+![ ](https://kuina-natsukawa.s-ul.eu/nE4pXjVS)
+
+
+<h5>FIXES:</h5>
+
+- [ ] Abort the current request if a new search request is initialized (**SEARCH**)
+- [x] Choice to search on: Beatmap Name, Beatmap ID, MapsetID, Creator ID (**SEARCH**)
+- [x] Load more results if on end (**SEARCH**)
+- [ ] Fix stop the download button on the searching page (**SEARCH**)
+- [ ] Remove files from the temp folder after importing a map/song.  (**CORE**)
+- [ ] Create a nagivation bar on the left panel  (**CORE**)
+- [x] Beatmaps with more than 1 audio inside them behave weirdly (**PLAYLIST**)
+- [ ] Sort songs by: alphabet, added date, etc. (**PLAYLIST**)
+- [ ] Continue playing the song after previewing a song from the search page (**PLAYER**)
+- [ ] Fix playlist after noticing a folder change/delete beatmap (**PLAYER**)
+- [ ] Stabalize the play_preview function (**PLAYER**)
+- [ ] Replace all .innerHTML to DOM Objects .textContent/.append (**XSS**)
+- [ ] Replace all JQuery code with Javascript code if i encounter any.
+- [ ] Change temp, songs data to write to appdata.
+- [ ] First song cover image is black after importing a song (**PLAYLIST**)
+- [x] Cancel download button is not pressable due to it being updated per 500ms (**DOWNLOADPAGE**)
+- [x] Show the cover image from local file instead of requesting from osu link. (**PLAYLIST**)
+- [x] Change play/pause icon when paused from Windows MediaSession (**PLAYER**)
+- [x] Add the downloaded song in the playlist of the player (**PLAYER**)
+- [x] Show medatdata on the Windows MediaSession (**PLAYER**)
+- [x] Implement the back- and forward button (**PLAYER**)
+
+<h5>UPCOMING ("Not Started"):</h5>
+
+- [ ] Create an home page
+- [ ] Create an info page
+- [ ] Create a settings page
+- [ ] ~~Option to set to download from Bloodcat Servers or CDN Bloodcat servers~~
+- [ ] Create library page where you can see all your playlists
+- [ ] Option to create playlist
+- [ ] Option to delete curtain songs
+- [ ] Option to add song to curtain playlist*
+- [ ] Volume fading on play or pause
+- [ ] Shuffle song option
+- [ ] If the songs has been downloaded before, dont show download icon on the search page
+
+<h5>REWRITING ALL SCRIPTS:</h5>
+
+- [x] download_beatmap.js
+- [x] download_page.js
+- [x] extract_download.js
+- [x] modules.js
+- [ ] page_switcher.js
+- [ ] parse_json.js
+- [x] player.js
+- [ ] playlist_page.js
+- [ ] search_page.js - Working on it
+
+<h5>Changelog:</h5>
+<h6>12-12-2020:</h6>
+
+    - Requested API access to BeatConnect
+    - Working working on fixes on search_page.js
+
+<h6>6-12-2020:</h6>
+
+    - Imported new Library HOWLER.JSO
+    - Rewrote player.js script 
+    - FIXED:
+        PLAYER - PLAY/PAUSE ICONS DONT CHANGE IF PAUSED FROM WINDOWS
+        PLAYER - FIX PLAYER AFTER DOWNLOADING A SONG
+        PLAYER - SHOW SONG COVER + TITLE ON THE WINDOWS MEDIA VOLUME
+        PLAYER - BACK AND FORWARD BUTTON.
+
+<h6>27-11-2020:</h6>
+
+    - FIXED:
+        DOWNLOADPAGE - DIFFERENT APPROACH ON THE PAGE... THE CANCEL BUTTON IS HARDLY PRESSABLE.
+        PLAYLIST - SHOW COVER.PNG INSTEAD OF WEBIMAGE FROM OSU.
+        CSS SEARCH LIST WRAPPER HEIGHT FIX
+        SEARCH LIST LOADING BAR ANIMATION SMOOTHER
+        REMOVED LAZY LOADER JQUERY... DECREASES THE PERFORMANCE OF WINDOW RESIZE
+
+<h6>25-11-2020:</h6>
+
+    - Added lazy loader for search page
+
+<h6>21-11-2020:</h6> 
+
+    - Download from CDN to improve download speed
+
+<h6>20-11-2020:</h6> 
+
+    - Added created download_beatmap.js [Download beatmaps from bloodcat]
+    - Added created extract_download.js [Extracts downloaded beatmaps and imports them to songs]
+
+<h6>19-11-2020:</h6> 
+
+    - I forgot what i did. Perhaps created [page_switcher.js, parse_json.js, modules.js, player.js, playlist.js, search_page.js, download_page.js. etc.]
+
+<h6>15-11-2020:</h6>
+
+    - START PROJECT
+    - Experimenting with ElectronJS and created the first html file.

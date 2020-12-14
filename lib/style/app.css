@@ -1,0 +1,112 @@
+:root {
+    --text_color: #ffffff;
+    --subject_color: #8a8a8a;
+    --bg_1_color: #1e1e1e;
+    --bg_2_color: #252526;
+    --bg_3_color: #2d2d30;
+    --bg_4_color: #3e3e42;
+    --accent_color: #f28482;
+}
+
+html, body{
+    font-family: Noto;
+    color: var(--text_color);
+    height: 100%;
+    width: 100%;
+    min-width: 500px;
+    max-height: 100%;
+    overflow: hidden;
+    margin: 0;
+    display: block;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url(../font/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: NotoBold;
+    src: url(../font/NotoSans-Bold.ttf);
+}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.left-panel{
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: var(--bg_1_color);
+    text-align: left;
+}
+
+.left_menu{
+    width: 100%;
+}
+
+.left_menu ul{
+    width: 100%;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.left_menu li{
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.left_menu li span i{
+    padding: 12.5px;
+    font-size: 20px;
+}
+
+.left_menu li span i:hover{
+    color: var(--accent_color);
+    transition: all linear 0.2s;
+}
+
+.right-panel{
+    position: relative;
+    float: left;
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: var(--bg_2_color);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg_3_color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg_4_color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--subject_color);
+}

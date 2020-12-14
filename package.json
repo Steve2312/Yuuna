@@ -1,0 +1,23 @@
+{
+  "name": "Tease",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  },
+  "dependencies": {
+    "electron-dl": "^3.0.2",
+    "extract-zip": "^2.0.1",
+    "howler": "^2.2.1",
+    "request": "^2.88.2",
+    "request-progress": "^3.0.0"
+  }
+}
