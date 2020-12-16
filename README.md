@@ -9,7 +9,7 @@ A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative
 
 <h5>FIXES:</h5>
 
-- [ ] Abort the current request if a new search request is initialized (**SEARCH**)
+- [x] Abort the current request if a new search request is initialized (**SEARCH**)
 - [x] Choice to search on: Beatmap Name, Beatmap ID, MapsetID, Creator ID (**SEARCH**)
 - [x] Load more results if on end (**SEARCH**)
 - [ ] Fix stop the download button on the searching page (**SEARCH**)
@@ -17,19 +17,20 @@ A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative
 - [ ] Create a nagivation bar on the left panel  (**CORE**)
 - [x] Beatmaps with more than 1 audio inside them behave weirdly (**PLAYLIST**)
 - [ ] Sort songs by: alphabet, added date, etc. (**PLAYLIST**)
-- [ ] Continue playing the song after previewing a song from the search page (**PLAYER**)
+- [ ] ~~Continue playing the song after previewing a song from the search page (**PLAYER**)~~
 - [ ] Fix playlist after noticing a folder change/delete beatmap (**PLAYER**)
-- [ ] Stabalize the play_preview function (**PLAYER**)
+- [x] Stabalize the play_preview function (**PLAYER**)
 - [ ] Replace all .innerHTML to DOM Objects .textContent/.append (**XSS**)
 - [ ] Replace all JQuery code with Javascript code if i encounter any.
 - [ ] Change temp, songs data to write to appdata.
-- [ ] First song cover image is black after importing a song (**PLAYLIST**)
+- [x] First song cover image is black after importing a song (**PLAYLIST**) *This doesnt occur anymore but ill keep notice when it happens*
 - [x] Cancel download button is not pressable due to it being updated per 500ms (**DOWNLOADPAGE**)
 - [x] Show the cover image from local file instead of requesting from osu link. (**PLAYLIST**)
 - [x] Change play/pause icon when paused from Windows MediaSession (**PLAYER**)
 - [x] Add the downloaded song in the playlist of the player (**PLAYER**)
 - [x] Show medatdata on the Windows MediaSession (**PLAYER**)
 - [x] Implement the back- and forward button (**PLAYER**)
+- [ ] Maybe when exporting the map include added date, so this improves the performace by not having to init fs module (**PLAYLIST**)
 
 <h5>UPCOMING ("Not Started"):</h5>
 
@@ -57,7 +58,23 @@ A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative
 - [ ] playlist_page.js
 - [ ] search_page.js - Working on it
 
+<h5>REWRITING CSS NAMES:</h5>
+
+- [x] player.css
+- [ ] card.css
+- [ ] app.css
+- [ ] download_card.css
+- [ ] download_page.css
+- [ ] playlist_card.css
+- [ ] playlist_page.css
+- [ ] search_page.css
+
 <h5>Changelog:</h5>
+<h6>16-12-2020:</h6>
+
+    - Changed weird class names and id names from player.js and player.css
+    - Working working on fixes on search_page.js
+
 <h6>12-12-2020:</h6>
 
     - Requested API access to BeatConnect
