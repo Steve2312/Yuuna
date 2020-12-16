@@ -1,5 +1,5 @@
 <h1>Tease (Not definite)</h1>
-A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative).
+A simple osu! music player using BeatConnect DB.
 
 <h5>Screenshots:</h5>
 
@@ -73,7 +73,9 @@ A simple osu! music player using *"Bloodcat CDN Server"*(Looking for alternative
 <h6>16-12-2020:</h6>
 
     - Changed weird class names and id names from player.js and player.css
-    - Working working on fixes on search_page.js
+    - Added icon change on preview
+    - Added an image if there was no thumbnail cover available
+    - Adjusted the width when icon switches from download to cancel
 
 <h6>12-12-2020:</h6>
 
