@@ -12,7 +12,7 @@ A simple osu! music player using BeatConnect DB.
 - [x] Abort the current request if a new search request is initialized (**SEARCH**)
 - [x] Choice to search on: Beatmap Name, Beatmap ID, MapsetID, Creator ID (**SEARCH**)
 - [x] Load more results if on end (**SEARCH**)
-- [ ] Fix stop the download button on the searching page (**SEARCH**)
+- [x] Fix stop the download button on the searching page (**SEARCH**)
 - [ ] Remove files from the temp folder after importing a map/song.  (**CORE**)
 - [ ] Create a nagivation bar on the left panel  (**CORE**)
 - [x] Beatmaps with more than 1 audio inside them behave weirdly (**PLAYLIST**)
@@ -71,6 +71,12 @@ Planning to rewrite all script using classes.
 - [ ] search_page.css
 
 <h5>Changelog:</h5>
+<h6>18-12-2020:</h6>
+
+    - Rewrote player.js to classes style
+    - Rewrote beatmap_dl.js to classes style
+    - Fixed cancel download button
+    - Retrieve Appdata path
 <h6>16-12-2020:</h6>
 
     - Changed weird class names and id names from player.js and player.css
