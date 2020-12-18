@@ -49,7 +49,7 @@ A simple osu! music player using BeatConnect DB.
 <h5>REWRITING ALL SCRIPTS:</h5>
 Planning to rewrite all script using classes.
 
-- [ ] download_beatmap.js
+- [x] download_beatmap.js -> beatmap_dl.js
 - [ ] download_page.js
 - [ ] extract_download.js
 - [ ] modules.js
