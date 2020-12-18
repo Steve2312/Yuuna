@@ -1,4 +1,4 @@
-const { app, BrowserWindow} = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 if (process.env.NODE_ENV == 'production') require('dotenv').config();
 
@@ -15,6 +15,10 @@ function createWindow() {
 
     win.loadFile("lib/main.html");
     //win.webContents.openDevTools()
+
+    ipcMain.on('appdata', (event, arg) => {
+        event.reply('appdata-reply', app.getPath('userData'));
+    });
 }
 
 app.whenReady().then(createWindow)
