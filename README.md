@@ -77,6 +77,7 @@ Planning to rewrite all script using classes.
     - Rewrote beatmap_dl.js to classes style
     - Fixed cancel download button
     - Retrieve Appdata path
+    - Download temp in appdata now
 <h6>16-12-2020:</h6>
 
     - Changed weird class names and id names from player.js and player.css
