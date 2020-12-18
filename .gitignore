@@ -7,3 +7,5 @@ start.bat
 .vs/
 TODO.TXT
 .env
+init.bat
+start.vbs
