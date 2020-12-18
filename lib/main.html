@@ -32,7 +32,7 @@
         <script type="text/javascript" src="scripts/extract_download.js"></script>
         <script type="text/javascript" src="scripts/download_page.js"></script>
         <script type="text/javascript" src="scripts/search_page.js"></script>
-        <script type="text/javascript" src="scripts/player.js"></script>
+        <!-- <script type="text/javascript" src="scripts/player.js"></script> -->
     </head>
     <body>
         <div class="container">
@@ -54,12 +54,12 @@
                     <div class="player_wrapper">
                         <div class="player_controls">
                             <div class="play_controls_wrapper">
-                                <p class="player_controls_button"><span onclick="player_backward()"><i class="fas fa-step-backward"></i></span></p>
-                                <p class="player_controls_button"><span onclick="player_play()"><i id="player_playbutton" class="fas fa-play"></i></span></p>
-                                <p class="player_controls_button"><span onclick="player_forward()"><i class="fas fa-step-forward"></i></span></p>
+                                <p class="player_controls_button"><span onclick="player.backward()"><i class="fas fa-step-backward"></i></span></p>
+                                <p class="player_controls_button"><span onclick="player.play()"><i id="player_playbutton" class="fas fa-play"></i></span></p>
+                                <p class="player_controls_button"><span onclick="player.forward()"><i class="fas fa-step-forward"></i></span></p>
                             </div>
                             <div class="player_volume_slider">
-                                <input type="range" min="0" max="40" value="0" class="volume_slider" id="player_volume_slider" oninput="change_volume()">
+                                <input type="range" min="0" max="40" value="0" class="volume_slider" id="player_volume_slider" oninput="player.change_volume()">
                             </div>
                         </div>
                         <div class="player_data">
@@ -72,7 +72,7 @@
                                 <div class="player_slider">
                                     <div id="player_currenttime" class="time">00:00</div>
                                     <div class="player_slider_wrapper">
-                                        <input type="range" min="0" max="1000" value="0" class="slider" id="player_slider" oninput="on_drag()" onclick="change_time()" onmouseup="check_drag(false)" onmousedown="check_drag(true)">
+                                        <input type="range" min="0" max="1000" value="0" class="slider" id="player_slider" oninput="player.on_drag()" onclick="player.change_time()" onmouseup="player.check_drag(false)" onmousedown="player.check_drag(true)">
                                     </div>
                                     <div id="player_totaltime" class="total_time">0:00</div>
                                 </div>

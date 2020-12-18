@@ -47,11 +47,11 @@ A simple osu! music player using BeatConnect DB.
 - [x] If the songs has been downloaded before, dont show download icon on the search page
 
 <h5>REWRITING ALL SCRIPTS:</h5>
-
-- [x] download_beatmap.js
-- [x] download_page.js
-- [x] extract_download.js
-- [x] modules.js
+Planning to rewrite all script using classes.
+- [ ] download_beatmap.js
+- [ ] download_page.js
+- [ ] extract_download.js
+- [ ] modules.js
 - [ ] page_switcher.js
 - [ ] parse_json.js
 - [x] player.js
