@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-
+const RPC = require("discord-rpc");
 if (process.env.NODE_ENV == 'production') require('dotenv').config();
 
 function createWindow() {
@@ -19,6 +19,10 @@ function createWindow() {
     ipcMain.on('appdata', (event, arg) => {
         event.reply('appdata-reply', app.getPath('userData'));
     });
+
+    ipcMain.on('discord_client_id', (event, arg) => {
+        event.reply('discord_client_id-reply', process.env.DISCORD_CLIENT_ID);
+    });
 }
 
 app.whenReady().then(createWindow)
@@ -34,3 +38,29 @@ app.on('activate', () => {
         createWindow();
     }
 })
+
+const rpc = new RPC.Client({
+    transport: "ipc"
+})
+
+rpc.on("ready", () => {
+    rpc.setActivity({
+        details: "No song is playing",
+        largeImageKey: "icon",
+    });
+});
+
+rpc.login({
+    clientId: process.env.DISCORD_CLIENT_ID
+})
+
+ipcMain.on('updateRPC', (event, arg) => {
+    rpc.setActivity({
+        details: arg[0],
+        state: "By: " + arg[1],
+        largeImageKey:  "icon",
+        largeImageText: "Playlist: " + arg[2],
+        smallImageKey: "dot",
+        smallImageText: "Beatmap ID: " + arg[3]
+    });
+});
