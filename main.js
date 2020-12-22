@@ -55,12 +55,26 @@ rpc.login({
 })
 
 ipcMain.on('updateRPC', (event, arg) => {
-    rpc.setActivity({
-        details: arg[0],
-        state: "By: " + arg[1],
-        largeImageKey:  "icon",
-        largeImageText: "Playlist: " + arg[2],
-        smallImageKey: "dot",
-        smallImageText: "Beatmap ID: " + arg[3]
-    });
+    if(arg[0] == 'playing') {
+        rpc.setActivity({
+            details: arg[1],
+            state: "By: " + arg[2],
+            largeImageKey:  "icon",
+            largeImageText: "Playlist: " + arg[3],
+            smallImageKey: "playing",
+            smallImageText: "Beatmap ID: " + arg[4],
+            startTimestamp: new Date(),
+            endTimestamp: arg[5]
+        });
+    }
+    if(arg[0] == 'paused') {
+        rpc.setActivity({
+            details: arg[1],
+            state: "By: " + arg[2],
+            largeImageKey:  "icon",
+            largeImageText: "Playlist: " + arg[3],
+            smallImageKey: "paused",
+            smallImageText: "Beatmap ID: " + arg[4],
+        });
+    }
 });
