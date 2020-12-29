@@ -45,7 +45,7 @@ html, body{
 .container {
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
+    height: calc(100% - 25px);
 }
 
 .left-panel{
@@ -66,25 +66,29 @@ html, body{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 .left_menu li{
-    width: 100%;
     list-style-type: none;
-    margin: 0;
+    margin: 5px;
     padding: 0;
-    text-align: center;
+    text-align: left;
+}
+
+.left_menu li span{
+    color: var(--subject_color);
+    padding: 12.5px;
+    font-size: 13px;
+}
+
+.left_menu li span:hover{
+    color: var(--accent_color);
+    transition: all linear 0.2s;
+    cursor: pointer;
 }
 
 .left_menu li span i{
-    padding: 12.5px;
-    font-size: 20px;
-}
-
-.left_menu li span i:hover{
-    color: var(--accent_color);
-    transition: all linear 0.2s;
+    margin: 0px 4px 0px 0px;
 }
 
 .right-panel{
@@ -109,4 +113,55 @@ html, body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--subject_color);
+}
+
+.toolbar {
+    height: 25px;
+    width: 100%;
+    background-color: var(--bg_1_color);
+    color: var(--subject_color);
+    font-size: 13px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar .logo p {
+    margin: 0px 5px;
+    width: auto;
+    font-weight: bold;
+}
+
+.toolbar .buttons {
+    height: 100%;
+    width: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.toolbar .buttons span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar .buttons i {
+    margin: 0px 7px;
+    width: auto;
+}
+
+#drag-region {
+    width: calc(100% - 78px);
+    height: 100%;
+    -webkit-app-region: drag;
+}
+
+#close-button:hover {
+    background-color: #f04747;
+}
+
+.toolbar .buttons span:hover {
+    color: white;
 }
