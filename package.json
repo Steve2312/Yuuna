@@ -1,5 +1,5 @@
 {
-  "name": "Tease",
+  "name": "Yuuna",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -20,6 +20,7 @@
     "extract-zip": "^2.0.1",
     "howler": "^2.2.1",
     "request": "^2.88.2",
-    "request-progress": "^3.0.0"
+    "request-progress": "^3.0.0",
+    "ws": "^7.4.1"
   }
 }
