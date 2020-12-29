@@ -8,8 +8,11 @@ function createWindow() {
         height: 720,
         minHeight: 700,
         minWidth: 800,
+        frame: false,
+        backgroundColor: '#1e1e1e',
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true
         }
     })
 
@@ -18,10 +21,6 @@ function createWindow() {
 
     ipcMain.on('appdata', (event, arg) => {
         event.reply('appdata-reply', app.getPath('userData'));
-    });
-
-    ipcMain.on('discord_client_id', (event, arg) => {
-        event.reply('discord_client_id-reply', process.env.DISCORD_CLIENT_ID);
     });
 }
 
@@ -39,15 +38,15 @@ app.on('activate', () => {
     }
 })
 
-const rpc = new RPC.Client({
-    transport: "ipc"
-})
+const browser = typeof window !== 'undefined';
+const rpc = new RPC.Client({ transport: browser ? 'websocket' : 'ipc' })
 
 rpc.on("ready", () => {
-    rpc.setActivity({
-        details: "No song is playing",
-        largeImageKey: "icon",
-    });
+    // rpc.setActivity({
+    //     details: "No song is playing",
+    //     largeImageKey: "icon",
+    // });
+    rpc.clearActivity();
 });
 
 rpc.login({
@@ -55,6 +54,7 @@ rpc.login({
 })
 
 ipcMain.on('updateRPC', (event, arg) => {
+    rpc.clearActivity();
     if(arg[0] == 'playing') {
         rpc.setActivity({
             details: arg[1],
@@ -64,17 +64,19 @@ ipcMain.on('updateRPC', (event, arg) => {
             smallImageKey: "playing",
             smallImageText: "Beatmap ID: " + arg[4],
             startTimestamp: new Date(),
-            endTimestamp: arg[5]
+            endTimestamp: arg[5],
+            instance: true
         });
     }
     if(arg[0] == 'paused') {
-        rpc.setActivity({
-            details: arg[1],
-            state: "By: " + arg[2],
-            largeImageKey:  "icon",
-            largeImageText: "Playlist: " + arg[3],
-            smallImageKey: "paused",
-            smallImageText: "Beatmap ID: " + arg[4],
-        });
+        // rpc.setActivity({
+        //     details: arg[1],
+        //     state: "By: " + arg[2],
+        //     largeImageKey:  "icon",
+        //     largeImageText: "Playlist: " + arg[3],
+        //     smallImageKey: "paused",
+        //     smallImageText: "Beatmap ID: " + arg[4],
+        // });
+        rpc.clearActivity();
     }
 });
