@@ -13,6 +13,7 @@
         <link href="style/download_card.css" rel="stylesheet" type="text/css">
         <link href="style/player.css" rel="stylesheet" type="text/css">
         <link href="style/playlist_card.css" rel="stylesheet" type="text/css">
+        <link href="style/all_playlist_page.css" rel="stylesheet" type="text/css">
 
         <!-- Fontawesome 5 -->
         <link href="fa/css/all.css" rel="stylesheet" type="text/css">
@@ -24,6 +25,7 @@
         <script type="text/javascript" src="scripts/jquery/jquery.lazy.min.js"></script>
 
         <!-- App Scripts -->
+        <script src="scripts/renderer.js"></script>
         <script src="scripts/modules.js"></script>
         <script src="scripts/page_switcher.js"></script>
         <script src="scripts/parse_json.js"></script>
@@ -35,17 +37,35 @@
         <!-- <script type="text/javascript" src="scripts/player.js"></script> -->
     </head>
     <body>
+        <header class="toolbar">
+            <div id="drag-region">
+                <div class="logo">
+                    <p>Yuuna</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <span id="min-button"><i><svg aria-hidden="false" width="12" height="12" viewBox="0 0 12 12"><rect fill="currentColor" width="10" height="1" x="1" y="6"></rect></svg></i></span>
+                <span id="max-button"><i><svg aria-hidden="false" width="12" height="12" viewBox="0 0 12 12"><rect width="9" height="9" x="1.5" y="1.5" fill="none" stroke="currentColor"></rect></svg></i></span>
+                <span id="close-button"><i><svg aria-hidden="false" width="12" height="12" viewBox="0 0 12 12"><polygon fill="currentColor" fill-rule="evenodd" points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1"></polygon></svg></i></span>
+            </div>
+        </header>
         <div class="container">
             <div class="row">
                 <div class="left-panel">
                     <div class="left_menu">
                         <ul>
-                            <li><span><i class="fas fa-home"></i></i></span></li>
-                            <li><span onclick="load_page(1)"><i class="fas fa-search"></i></span></li>
-                            <li><span onclick="load_page(2)"><i class="fas fa-arrow-circle-down"></i></span></li>
-                            <li><span onclick="load_page(0)"><i class="fas fa-list"></i></span></li>
-                            <li><span><i class="fas fa-info-circle"></i></span></li>
+                            <li><span><i class="fas fa-home"></i>Home</span></li>
+                            <li><span onclick="load_page(1)"><i class="fas fa-search"></i>Search</span></li>
+                            <li><span onclick="load_page(2)"><i class="fas fa-download"></i>Downloads</span></li>
+                            <li><span></span></li>
+                            <li><span onclick="load_page(0)"><i class="fas fa-archive"></i>Library</span></li>
+                            <li><span onclick="load_page(3)"><i class="fas fa-list"></i>Playlists</span></li>
+                            <li><span><i class="fas fa-cog"></i></i>Settings</span></li>
+                            <li><span><i class="fas fa-info-circle"></i></i>Info</span></li>
                         </ul>
+                    </div>
+                    <div class="recent_playlists">
+
                     </div>
                 </div>
                 <div class="right-panel">
