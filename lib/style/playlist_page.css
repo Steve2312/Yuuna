@@ -25,11 +25,12 @@
     position: relative;
     width: 100%;
     height: 250px;
-    background-image: linear-gradient(to bottom,rgba(0,0,0,0), var(--bg_2_color)), url("https://64.media.tumblr.com/1d32de1638c837cac1c9a6dc3d46a1e2/ec260192658d1a4f-b1/s2048x3072/9cb9884929e7b136fc8b1f9f6a6f38deeb14ee67.png");
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), var(--bg_2_color)), url("../images/bg2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
     z-index: 1;
+    border-radius: 5px 0px 0px 0px;
 }
 
 .playlist_page h1{
