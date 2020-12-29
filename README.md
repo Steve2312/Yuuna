@@ -1,4 +1,4 @@
-<h1>Tease (Not definite)</h1>
+<h1>Yuuna</h1>
 A simple osu! music player using BeatConnect DB.
 
 <h5>Screenshots:</h5>
