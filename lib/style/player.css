@@ -201,3 +201,23 @@
     transition: all linear 0.2s;
     cursor: pointer;
 }
+
+.player_controls_button_extra {
+    color: var(--subject_color);
+    font-size: 12px;
+    margin: 5px;
+}
+
+.player_controls_button_extra:hover{
+    color: var(--accent_color);
+    transition: all linear 0.2s;
+    cursor: pointer;
+}
+
+.player_controls_button_extra_active {
+    color: var(--accent_color);
+}
+
+.player_controls_button_extra_active:hover {
+    color: var(--highlight_accent);
+}
