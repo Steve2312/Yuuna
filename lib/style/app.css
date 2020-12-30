@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
 :root {
     --text_color: #ffffff;
     --subject_color: #8a8a8a;
@@ -6,6 +8,7 @@
     --bg_3_color: #2d2d30;
     --bg_4_color: #3e3e42;
     --accent_color: #f28482;
+    --highlight_accent: #f29d9b;
 }
 
 html, body{
@@ -70,14 +73,21 @@ html, body{
 
 .left_menu li{
     list-style-type: none;
-    margin: 5px;
+    margin: 0;
     padding: 0;
     text-align: left;
 }
 
+.left_menu .subject {
+    color: var(--subject_color);
+    margin: 12.5px;
+    font-size: 13px;
+}
+
 .left_menu li span{
     color: var(--subject_color);
-    padding: 12.5px;
+    padding: 0;
+    margin: 17.5px;
     font-size: 13px;
 }
 
@@ -116,6 +126,7 @@ html, body{
 }
 
 .toolbar {
+    margin-top: 1px;
     height: 25px;
     width: 100%;
     background-color: var(--bg_1_color);
@@ -130,7 +141,6 @@ html, body{
 .toolbar .logo p {
     margin: 0px 5px;
     width: auto;
-    font-weight: bold;
 }
 
 .toolbar .buttons {
@@ -154,8 +164,11 @@ html, body{
 
 #drag-region {
     width: calc(100% - 78px);
-    height: 100%;
+    /* height: 100%; */
+    margin-top: 4px;
     -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
 }
 
 #close-button:hover {
