@@ -16,12 +16,15 @@ function createWindow() {
         }
     })
 
+    win.webContents.on('did-finish-load', () => {
+        // turn on in production
+        // win.setMenu(null);
+        win.webContents.setZoomFactor(1);
+        win.webContents.setVisualZoomLevelLimits(1,1);
+    });
+
     win.loadFile("lib/main.html");
     //win.webContents.openDevTools()
-
-    ipcMain.on('appdata', (event, arg) => {
-        event.reply('appdata-reply', app.getPath('userData'));
-    });
 }
 
 app.whenReady().then(createWindow)
@@ -42,10 +45,6 @@ const browser = typeof window !== 'undefined';
 const rpc = new RPC.Client({ transport: browser ? 'websocket' : 'ipc' })
 
 rpc.on("ready", () => {
-    // rpc.setActivity({
-    //     details: "No song is playing",
-    //     largeImageKey: "icon",
-    // });
     rpc.clearActivity();
 });
 
@@ -69,14 +68,6 @@ ipcMain.on('updateRPC', (event, arg) => {
         });
     }
     if(arg[0] == 'paused') {
-        // rpc.setActivity({
-        //     details: arg[1],
-        //     state: "By: " + arg[2],
-        //     largeImageKey:  "icon",
-        //     largeImageText: "Playlist: " + arg[3],
-        //     smallImageKey: "paused",
-        //     smallImageText: "Beatmap ID: " + arg[4],
-        // });
         rpc.clearActivity();
     }
 });
