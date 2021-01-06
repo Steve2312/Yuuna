@@ -14,15 +14,15 @@ A simple osu! music player using BeatConnect DB.
 - [x] Load more results if on end (**SEARCH**)
 - [x] Fix stop the download button on the searching page (**SEARCH**)
 - [ ] Remove files from the temp folder after importing a map/song.  (**CORE**)
-- [ ] Create a nagivation bar on the left panel  (**CORE**)
+- [x] Create a nagivation bar on the left panel  (**CORE**)
 - [x] Beatmaps with more than 1 audio inside them behave weirdly (**PLAYLIST**)
-- [ ] Sort songs by: alphabet, added date, etc. (**PLAYLIST**)
+- [ ] ~~Sort songs by: alphabet, added date, etc. (**PLAYLIST**)~~
 - [ ] ~~Continue playing the song after previewing a song from the search page (**PLAYER**)~~
 - [ ] Fix playlist after noticing a folder change/delete beatmap (**PLAYER**)
 - [x] Stabalize the play_preview function (**PLAYER**)
 - [ ] Replace all .innerHTML to DOM Objects .textContent/.append (**XSS**)
 - [ ] Replace all JQuery code with Javascript code if i encounter any.
-- [ ] Change temp, songs data to write to appdata.
+- [x] Change temp, songs data to write to appdata.
 - [x] First song cover image is black after importing a song (**PLAYLIST**) *This doesnt occur anymore but ill keep notice when it happens*
 - [x] Cancel download button is not pressable due to it being updated per 500ms (**DOWNLOADPAGE**)
 - [x] Show the cover image from local file instead of requesting from osu link. (**PLAYLIST**)
@@ -43,7 +43,8 @@ A simple osu! music player using BeatConnect DB.
 - [ ] Option to delete curtain songs
 - [ ] Option to add song to curtain playlist*
 - [ ] Volume fading on play or pause
-- [ ] Shuffle song option
+- [x] Shuffle song option
+- [x] Playlist on repeat option
 - [x] If the songs has been downloaded before, dont show download icon on the search page
 
 <h5>REWRITING ALL SCRIPTS:</h5>
