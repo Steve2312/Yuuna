@@ -81,7 +81,7 @@
                                 <p class="player_controls_button"><span onclick="player.backward()"><i class="fas fa-step-backward"></i></span></p>
                                 <p class="player_controls_button"><span onclick="player.play()"><i id="player_playbutton" class="fas fa-play"></i></span></p>
                                 <p class="player_controls_button"><span onclick="player.forward()"><i class="fas fa-step-forward"></i></span></p>
-                                <p class="player_controls_button_extra"><span><i class="fas fa-redo-alt"></i></span></p>
+                                <p class="player_controls_button_extra"><span onclick="player.repeat()" id="repeat"><i class="fas fa-redo-alt"></i></span></p>
                             </div>
                             <div class="player_volume_slider">
                                 <input type="range" min="0" max="40" value="0" class="volume_slider" id="player_volume_slider" oninput="player.change_volume()">
