@@ -141,7 +141,7 @@
     justify-content: space-around;
     width: 170px;
     height: auto;
-    background: var(--bg_4_color);
+    background: var(--bg_2_color);
     font-size: 13px;
     transform: translate(-100%, -100%);
     z-index: 10;
@@ -154,6 +154,6 @@
 }
 
 .playlist_options span:hover{
-    background-color: var(--bg_2_color);
+    background-color: var(--bg_3_color);
     cursor: pointer;
 }
