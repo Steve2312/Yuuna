@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const RPC = require("discord-rpc");
-if (process.env.NODE_ENV == 'production') require('dotenv').config();
+if (process.env.NODE_ENV == 'development') require('dotenv').config();
 
 function createWindow() {
     const win = new BrowserWindow({
