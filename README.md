@@ -57,7 +57,7 @@ Planning to rewrite all script using classes.
 - [ ] page_switcher.js
 - [ ] parse_json.js
 - [x] player.js
-- [ ] playlist_page.js
+- [x] playlist_page.js
 - [ ] search_page.js - Working on it
 
 <h5>REWRITING CSS NAMES:</h5>
