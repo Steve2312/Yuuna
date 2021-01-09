@@ -8,7 +8,7 @@
     "start": "electron ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Steve2312",
   "license": "ISC",
   "devDependencies": {
     "electron": "^10.1.5"
