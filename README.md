@@ -55,7 +55,7 @@ Planning to rewrite all script using classes.
 - [ ] extract_download.js
 - [ ] modules.js
 - [ ] page_switcher.js
-- [ ] parse_json.js
+- [x] parse_json.js
 - [x] player.js
 - [x] playlist_page.js
 - [x] search_page.js
