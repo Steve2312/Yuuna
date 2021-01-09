@@ -24,7 +24,7 @@
 .player_data {
     display: flex;
     justify-content: flex-start;
-    width: calc(100%);
+    min-width: calc(100% - 240px);
     height: 100%;
     margin: 0px 20px;
     background-color: var(--bg_2_color);
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 100%;
+    min-width: calc(100% - 70px);
     height: 100%;
 }
 
