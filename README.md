@@ -13,7 +13,7 @@ A simple osu! music player using BeatConnect DB.
 - [x] Choice to search on: Beatmap Name, Beatmap ID, MapsetID, Creator ID (**SEARCH**)
 - [x] Load more results if on end (**SEARCH**)
 - [x] Fix stop the download button on the searching page (**SEARCH**)
-- [ ] Remove files from the temp folder after importing a map/song.  (**CORE**)
+- [x] Remove files from the temp folder after importing a map/song.  (**CORE**)
 - [x] Create a nagivation bar on the left panel  (**CORE**)
 - [x] Beatmaps with more than 1 audio inside them behave weirdly (**PLAYLIST**)
 - [ ] ~~Sort songs by: alphabet, added date, etc. (**PLAYLIST**)~~
@@ -50,7 +50,7 @@ A simple osu! music player using BeatConnect DB.
 <h5>REWRITING ALL SCRIPTS:</h5>
 Planning to rewrite all script using classes.
 
-- [x] download_beatmap.js -> beatmap_dl.js
+- [x] beatmap_dl.js
 - [ ] download_page.js
 - [ ] extract_download.js
 - [ ] modules.js
@@ -58,7 +58,8 @@ Planning to rewrite all script using classes.
 - [ ] parse_json.js
 - [x] player.js
 - [x] playlist_page.js
-- [ ] search_page.js - Working on it
+- [x] search_page.js
+- [x] toolbox.js
 
 <h5>REWRITING CSS NAMES:</h5>
 
