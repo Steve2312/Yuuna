@@ -43,6 +43,7 @@ A simple osu! music player using BeatConnect DB.
 - [ ] Option to delete curtain songs
 - [ ] Option to add song to curtain playlist*
 - [ ] Volume fading on play or pause
+- [ ] Move the song position in the playlist with dragging, except on library
 - [x] Shuffle song option
 - [x] Playlist on repeat option
 - [x] If the songs has been downloaded before, dont show download icon on the search page
