@@ -8,6 +8,7 @@
     border-radius: 5px;
     margin: 10px 20px;
     overflow: hidden;
+    transition: height cubic-bezier(.02,.29,.32,.99) 1000ms, margin-bottom cubic-bezier(.02,.29,.32,.99) 1000ms, transform cubic-bezier(.02,.29,.32,.99) 1000ms;
 }
 
 .play_list_card .play_list_cover{
