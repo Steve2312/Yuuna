@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, protocol } = require('electron');
 const RPC = require("discord-rpc");
 if (process.env.NODE_ENV == 'development') require('dotenv').config();
 
@@ -27,33 +27,27 @@ function createWindow() {
     //win.webContents.openDevTools()
 }
 
-app.whenReady().then(createWindow)
+app.setAsDefaultProtocolClient('yuuna');
+app.on("open-url", () => {
+    console.log(argv.slice(1));
+});
 
+app.whenReady().then(createWindow)
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }
 })
-
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     }
 })
 
-const browser = typeof window !== 'undefined';
-const rpc = new RPC.Client({ transport: browser ? 'websocket' : 'ipc' })
+const rpc = new RPC.Client({ transport: typeof window !== 'undefined' ? 'websocket' : 'ipc' })
+rpc.login({clientId: process.env.DISCORD_CLIENT_ID});
 
-rpc.on("ready", () => {
-    rpc.clearActivity();
-});
-
-rpc.login({
-    clientId: process.env.DISCORD_CLIENT_ID
-})
-
-ipcMain.on('updateRPC', (event, arg) => {
-    rpc.clearActivity();
+ipcMain.on('updateRPC', async (event, arg) => {
     if(arg[0] == 'playing') {
         rpc.setActivity({
             details: arg[1],
@@ -64,7 +58,7 @@ ipcMain.on('updateRPC', (event, arg) => {
             smallImageText: "Beatmap ID: " + arg[4],
             startTimestamp: new Date(),
             endTimestamp: arg[5],
-            instance: true
+            instance: false
         });
     }
     if(arg[0] == 'paused') {
