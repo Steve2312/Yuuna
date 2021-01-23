@@ -1,9 +1,34 @@
 const { app, BrowserWindow, ipcMain, protocol } = require('electron');
 const RPC = require("discord-rpc");
 if (process.env.NODE_ENV == 'development') require('dotenv').config();
+let mainWindow = null;
+let deeplinkingUrl = null;
+
+// Force Single Instance Application
+const gotTheLock = app.requestSingleInstanceLock();
+if (!gotTheLock) {
+    app.quit();
+    return
+} else {
+    app.on('second-instance', (e, argv) => {
+      // Someone tried to run a second instance, we should focus our window.
+        if (process.platform == 'win32') {
+            // Keep only command line / deep linked arguments
+            deeplinkingUrl = argv.slice(1)
+        }
+        mainWindow.webContents.send('browser', deeplinkingUrl);
+      
+      if (mainWindow) {
+            if (mainWindow.isMinimized()) {
+                mainWindow.restore()
+            }
+            mainWindow.focus()
+        }
+    })
+  }
 
 function createWindow() {
-    const win = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
         minHeight: 700,
@@ -16,37 +41,46 @@ function createWindow() {
         }
     })
 
-    win.webContents.on('did-finish-load', () => {
+    mainWindow.webContents.on('did-finish-load', () => {
         // turn on in production
-        // win.setMenu(null);
-        win.webContents.setZoomFactor(1);
-        win.webContents.setVisualZoomLevelLimits(1,1);
+        // mainWindow.setMenu(null);
+        mainWindow.webContents.setZoomFactor(1);
+        mainWindow.webContents.setVisualZoomLevelLimits(1,1);
     });
 
-    win.loadFile("lib/main.html");
-    //win.webContents.openDevTools()
+    mainWindow.loadFile("lib/main.html");
+    //mainWindow.webContents.openDevTools()
+
+    if (process.platform == 'win32') {
+        // Keep only command line / deep linked arguments
+        deeplinkingUrl = process.argv.slice(1)
+    }
+    mainWindow.webContents.once('dom-ready', () => {
+        mainWindow.webContents.send('browser', deeplinkingUrl);
+    });
 }
 
-app.setAsDefaultProtocolClient('yuuna');
-app.on("open-url", () => {
-    console.log(argv.slice(1));
-});
+// Create myWindow, load the rest of the app, etc...
+app.on("ready", createWindow);
 
-app.whenReady().then(createWindow)
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }
-})
+});
+
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     }
 })
 
+app.setAsDefaultProtocolClient('yuuna');
+
+
+// Discord RPC
 const rpc = new RPC.Client({ transport: typeof window !== 'undefined' ? 'websocket' : 'ipc' })
 rpc.login({clientId: process.env.DISCORD_CLIENT_ID});
-
 ipcMain.on('updateRPC', async (event, arg) => {
     if(arg[0] == 'playing') {
         rpc.setActivity({
