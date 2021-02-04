@@ -48,10 +48,12 @@ html, body{
 .container {
     margin-left: auto;
     margin-right: auto;
-    height: calc(100% - 25px);
+    height: calc(100% - 125px);
 }
 
 .left-panel{
+    display: flex;
+    flex-direction: column;
     float: left;
     width: 200px;
     height: 100%;
@@ -61,6 +63,7 @@ html, body{
 
 .left_menu{
     width: 100%;
+    height: 350px;
 }
 
 .left_menu ul{
@@ -177,4 +180,172 @@ html, body{
 
 .toolbar .buttons span:hover {
     color: white;
+}
+
+.recent_playlists {
+    list-style: none;
+    height: calc(100% - 405px);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--subject_color);
+    font-size: 13px;
+}
+
+.recent_playlists li {
+    margin: 0px 12.5px;
+}
+
+.recent_playlists .playlist_names {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.recent_playlists .playlist_names li {
+    margin: 3px 20px;
+    transition: color 0.2s linear;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent_playlists .playlist_names li:hover {
+    color: var(--text_color);
+    cursor: pointer;
+}
+
+.new_playlist {
+    text-align: center;
+    color: var(--subject_color);
+    padding: 17.5px;
+    font-size: 14px;
+    border-top: 1px solid var(--subject_color);
+    transition: color 0.2s linear;
+}
+
+.new_playlist:hover {
+    color: var(--text_color);
+    cursor: pointer;
+}
+
+.create_playlist {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    height: auto;
+    background-color: var(--bg_2_color);
+    color: var(--subject_color);
+    font-size: 13px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px var(--bg_1_color);
+}
+
+.create_playlist_header, .create_playlist_footer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create_playlist_header h2 {
+    font-size: 20px;
+    color: var(--text_color);
+}
+
+.create_playlist_body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    background-color: var(--bg_2_color);
+    color: var(--subject_color);
+    font-size: 13px;
+}
+
+.create_playlist .create_playlist_textbox {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 20px;
+}
+
+.create_playlist .create_playlist_textbox h4{
+    font-size: 13px;
+    color: var(--subject_color);
+    margin: 10px 0px;
+}
+
+.create_playlist .create_playlist_textbox #create_playlist_name, .create_playlist .create_playlist_textbox #create_playlist_name:focus,
+.create_playlist .create_playlist_textbox #create_playlist_description, .create_playlist .create_playlist_textbox #create_playlist_description:focus{
+    background-color: var(--text_color);
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 98%;
+    height: 30px;
+    border-radius: 2px;
+    resize: none;
+}
+
+.create_playlist .create_playlist_textbox #create_playlist_description, .create_playlist .create_playlist_textbox #create_playlist_description:focus{
+    height: 70px;
+    align-items: flex-start;
+}
+
+.create_playlist_image {
+    display: block;
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    background-image: url("../images/cover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0);
+    transition: all linear 0.2s;
+    outline: none;
+}
+
+.create_playlist_image input{
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.create_playlist_image:hover {
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+}
+
+.create_playlist_save_button {
+    padding: 10px 15px;
+    color: var(--text_color);
+    background-color: var(--accent_color);
+    border-radius: 50px;
+    transition: background-color 0.2s linear;
+    margin: 15px 0px 0px 0px;
+}
+
+.create_playlist_save_button:hover {
+    background-color: var(--highlight_accent);
+    cursor: pointer;
 }
