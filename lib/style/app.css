@@ -210,21 +210,26 @@ html, body{
 }
 
 .recent_playlists .playlist_names li:hover {
-    color: var(--text_color);
+    color: var(--accent_color);
     cursor: pointer;
 }
 
 .new_playlist {
     text-align: center;
     color: var(--subject_color);
-    padding: 17.5px;
+    padding: 0px;
     font-size: 14px;
-    border-top: 1px solid var(--subject_color);
+    border-top: 1px solid var(--bg_4_color);
     transition: color 0.2s linear;
+    display: grid;
+}
+
+.new_playlist span {
+    padding: 17.5px;
 }
 
 .new_playlist:hover {
-    color: var(--text_color);
+    color: var(--accent_color);
     cursor: pointer;
 }
 
@@ -240,13 +245,20 @@ html, body{
     font-size: 13px;
     margin: 0;
     position: absolute;
-    top: 50%;
+    opacity: 0;
+    top: 40%;
+
+    /* opacity: 1;
+    top: 50%; */
+
     left: 50%;
     padding: 15px;
     transform: translate(-50%, -50%);
     z-index: 100;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px var(--bg_1_color);
+    transition: top cubic-bezier(.02,.29,.32,.99) 1000ms, margin-bottom cubic-bezier(.02,.29,.32,.99) 1000ms, opacity cubic-bezier(.02,.29,.32,.99) 1000ms;
+    pointer-events: all !important;
 }
 
 .create_playlist_header, .create_playlist_footer {
