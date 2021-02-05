@@ -39,8 +39,8 @@ A simple osu! music player using BeatConnect DB.
 - [ ] Create a settings page
 - [ ] ~~Option to set to download from Bloodcat Servers or CDN Bloodcat servers~~
 - [ ] Create library page where you can see all your playlists
-- [ ] Option to create playlist
-- [ ] Option to delete curtain songs
+- [x] Option to create playlist
+- [x] Option to delete curtain songs
 - [ ] Option to add song to curtain playlist*
 - [ ] Volume fading on play or pause
 - [ ] Move the song position in the playlist with dragging, except on library
