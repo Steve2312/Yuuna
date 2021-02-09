@@ -199,6 +199,13 @@ html, body{
 .recent_playlists .playlist_names {
     overflow-y: scroll;
     overflow-x: hidden;
+    height: 100%;
+}
+
+.recent_playlists ul, .playlist_names ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .recent_playlists .playlist_names li {
