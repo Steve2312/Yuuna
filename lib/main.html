@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <title>Yuuna</title>
         <!-- Meta Stuff -->
         <meta charset="utf-8"/>        
 
@@ -8,6 +9,7 @@
         <link href="style/app.css" rel="stylesheet" type="text/css">
         <link href="style/card.css" rel="stylesheet" type="text/css">
         <link href="style/playlist_page.css" rel="stylesheet" type="text/css">
+        <link href="style/library_page.css" rel="stylesheet" type="text/css">
         <link href="style/search_page.css" rel="stylesheet" type="text/css">
         <link href="style/download_page.css" rel="stylesheet" type="text/css">
         <link href="style/download_card.css" rel="stylesheet" type="text/css">
@@ -19,17 +21,17 @@
         <link href="fa/css/all.css" rel="stylesheet" type="text/css">
 
         <!-- JQuery Scripts -->
-        <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
+        <script src="scripts/jquery/jquery.js"></script>
         <script src="scripts/jquery/jquery.min.js"></script>
         <script src="scripts/jquery/jquery-ui.js"></script>
-        <script type="text/javascript" src="scripts/jquery/jquery.lazy.min.js"></script>
+        <script src="scripts/jquery/jquery.lazy.min.js"></script>
 
         <!-- App Scripts -->
         <script src="scripts/modules.js"></script>
         <script src="scripts/renderer.js"></script>
         <script src="scripts/page_switcher.js"></script>
-        <script type="text/javascript" src="scripts/extract_download.js"></script>
-        <script type="text/javascript" src="scripts/download_page.js"></script>
+        <script src="scripts/extract_download.js"></script>
+        <script src="scripts/download_page.js"></script>
     </head>
     <body>
         <header class="toolbar">
@@ -58,30 +60,21 @@
                             <li><span onclick="load_page(0)"><i class="fas fa-archive"></i>Library</span></li>
                             <li><span onclick="load_page(3)"><i class="fas fa-list"></i>Playlists</span></li>
                             <li class="subject">App</li>
-                            <li><span><i class="fas fa-cog"></i></i>Settings</span></li>
-                            <li><span><i class="fas fa-info-circle"></i></i>Info</span></li>
+                            <li><span><i class="fas fa-cog"></i>Settings</span></li>
+                            <li><span><i class="fas fa-info-circle"></i>Info</span></li>
                         </ul>
                     </div>
                     <div class="recent_playlists">
-                        <li><span>Playlist</span></li>
+                        <ul>
+                            <li><span>Playlist</span></li>
+                        </ul>
                         <div class="playlist_names">
-                            <li><span>Playlist #1</span></li>
-                            <li><span>Playlist #2</span></li>
-                            <li><span>Playlist #3</span></li>
-                            <li><span>Playlist #4</span></li>
-                            <li><span>Playlist #5</span></li>
-                            <li><span>Playlist #6</span></li>
-                            <li><span>Playlist #7</span></li>
-                            <li><span>Playlist #8</span></li>
-                            <li><span>Playlist #9</span></li>
-                            <li><span>Playlist #10</span></li>
-                            <li><span>Playlist #11</span></li>
-                            <li><span>Playlist #12</span></li>
-                            <li><span>Playlist #13</span></li>
+                            <ul id="playlist_names">
+                            </ul>
                         </div>
                     </div>
                     <div class="new_playlist">
-                        <span>New Playlist</span>
+                        <span onclick="playlist.show_create_playlist()">New Playlist</span>
                     </div>
                 </div>
                 <div class="right-panel">
@@ -121,7 +114,8 @@
             </div>
         </div>
         <div id="toolbox"></div>
-        <div class="create_playlist">
+        <div id="toolbox_create_playlist"></div>
+        <!-- <div class="create_playlist">
             <div class="create_playlist_header">
                 <h2>Create Playlist</h2>
             </div>
@@ -139,6 +133,6 @@
             <div class="create_playlist_footer">
                 <span class="create_playlist_save_button" onclick="playlist.submit()">Save playlist</span>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
