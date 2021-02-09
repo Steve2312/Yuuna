@@ -8,6 +8,12 @@ A simple osu! music player using BeatConnect DB.
 
 
 <h5>FIXES:</h5>
+<h6>IMPORTANT:</h6>
+
+- [x] USE INDEX FOR FINDING OUT WHAT THE NEXT SONG IS... PLAYLIST CANT PLAY DUPPED SONGS (**PLAYER, PARSE_JSON**)
+- [ ] ADD TO SPECIFIC PLAYLIST, RN CAN ONLY ADD TO 1 PLAYLIST (**PLAYLIST, TOOLBOX**)
+- [ ] EDIT PLAYLIST IMAGE, NAME, DESCRIPTION (**PLAYLIST**)
+- [ ] IF SONG IS DELETED, REMOVE FROM ALL PLAYLISTS (**PLAYLIST**)
 
 - [x] Abort the current request if a new search request is initialized (**SEARCH**)
 - [x] Choice to search on: Beatmap Name, Beatmap ID, MapsetID, Creator ID (**SEARCH**)
