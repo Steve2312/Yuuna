@@ -136,16 +136,16 @@
     pointer-events: auto !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     width: 170px;
     height: auto;
-    overflow: hidden;
     background: var(--bg_2_color);
     font-size: 13px;
     transform: translate(-100%, -100%);
     z-index: 10;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px var(--bg_1_color);
+    z-index: 100000;
 }
 
 .playlist_toolbox span{
@@ -155,4 +155,9 @@
 .playlist_toolbox span:hover{
     background-color: var(--bg_3_color);
     cursor: pointer;
+}
+
+.playlist_toolbox_playlists {
+    max-height: 300px;
+    overflow-y: scroll;
 }
