@@ -1,3 +1,9 @@
+<h1>Working on a version 2</h1>
+<h2>Won't be updating this repository anymore!</h2>
+<h2>Download version 1.1.2</h2>
+https://drive.google.com/file/d/1cB2I0BDH0alhvNpKIZ6GubFntNrOdgGM/view?usp=sharing
+
+
 <h1>Yuuna</h1>
 A simple osu! music player using BeatConnect DB.
 
